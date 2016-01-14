@@ -1,11 +1,10 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.example.ming.myapplication"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
@@ -24,4 +23,31 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23+'
     compile 'com.android.support:design:23+'
+}
+
+//创建导出本地仓库信息
+ext{
+    bintrayRepo='maven'
+    bintrayName='test-cubic'
+
+    publishedGroupId='com.ming.library'
+    libraryName='test-ming'
+    artifact='test-cubic'
+
+    librayrDescription='this is my first jcener maven library'
+    //项目主页地址
+    siteUrl='https://github.com/zzuli4519/TestPathCubic'
+    //git 仓库管理地址
+    gitUrl='https://github.com/zzuli4519/TestPathCubic.git'
+    //当前library 版本号为多少
+    libraryVersion='1.0.0'
+
+    developerId='zzuli4519'
+    developerName='ming'
+    developerEmail='zzuli4519@163.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
 }
