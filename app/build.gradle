@@ -1,4 +1,4 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
@@ -34,7 +34,7 @@ ext{
 
     publishedGroupId='com.ming.library'
     artifact='cubic'
-    libraryName='test-ming'
+    libraryName='android-tool'
 
     libraryDescription='this is my first jcener maven library'
     //项目主页地址

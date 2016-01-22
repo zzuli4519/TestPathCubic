@@ -1,7 +1,10 @@
 package com.example.ming.myapplication;
 
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +24,18 @@ public class MainActivity extends AppCompatActivity {
 
     final String TAG=MainActivity.class.getSimpleName();
     private View mView;
+
+    private ServiceConnection mServiceConnection=new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +57,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        //创建绑定Service
+//        bindService(new Intent(this,MyService.class),mServiceConnection,BIND_AUTO_CREATE);
 
+
+        startService(new Intent(this,MyService.class));
     }
 
 
